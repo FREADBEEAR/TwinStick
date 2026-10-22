@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Transform playerTransform;
+    Transform colllectableTransform;
+    float distanceToPlayer;
+    
     void Start()
     {
-        
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        colllectableTransform = this.gameObject.GetComponent<Transform>();
+
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        distanceToPlayer = Vector3.Distance(playerTransform.position, colllectableTransform.position);
+        Debug.Log(distanceToPlayer);
     }
 }
