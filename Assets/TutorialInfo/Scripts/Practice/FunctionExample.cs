@@ -7,6 +7,7 @@ public class FunctionExample : MonoBehaviour
     {
         TakeDamage(5);
         CollectCoins(1);
+        CalculateHealth(10,5);
         int result = CollectCoins(1);
         Debug.Log($"Total coins collected: {result}");
     }
@@ -22,4 +23,9 @@ public class FunctionExample : MonoBehaviour
         return result;
     }
 
+    private int CalculateHealth(int health, int damage)
+    {
+        int result = health - damage;
+        return result;
+    }
 }
