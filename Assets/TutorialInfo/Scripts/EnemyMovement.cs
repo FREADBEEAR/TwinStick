@@ -17,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(MoveDirection * Time.deltaTime * MoveSpeed, Space.World);
+        
+
     }
 
     private void OnCollisionEnter(Collision other)
