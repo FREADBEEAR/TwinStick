@@ -1,10 +1,11 @@
 using UnityEngine;
 
-public class WeaponPractise 
+public class WeaponPractise
 {
     public float weapondamage;
     public string weaponName;
 
+    public WeaponPractise() {  }
     public WeaponPractise(float Damage, string DisplayedNameW)
 
     {
