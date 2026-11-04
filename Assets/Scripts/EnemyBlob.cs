@@ -29,14 +29,14 @@ public class EnemyBlob : MonoBehaviour
         distanceToPlayer = Vector3.Distance(playerTransform.position, enemytransform.position);
 
 
-        if (distanceToPlayer < minimumDamageDistance)
+        if (distanceToPlayer <= minimumDamageDistance)
 
 
         {
             explosionEffect.transform.parent = null;
             explosionEffect.SetActive(true);
             GameObject.Destroy(enemytransform.gameObject);
-            healthRef.currentHealth = healthRef.currentHealth - damage;
+            healthRef.TakeDamage(damage);
 
         }
 

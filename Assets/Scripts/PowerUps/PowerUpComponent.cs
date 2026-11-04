@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class PowerUpComponent : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private int referenceIndex;
+    PowerUpManager powerUpManager;
+    private void Start()
     {
-        
+        powerUpManager = GameObject.Find("PowerUpManager").GetComponent<PowerUpManager>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
         
+
+
+        if (other.gameObject.tag == "Player") 
+        {
+            powerUpManager.powerUpñount[referenceIndex]++;
+            Destroy(gameObject);
+
+        }
     }
+
+    
 }

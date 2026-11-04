@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float horInput;
     float verInput;
     float movementSpeedMultiplier = 1;
+    public bool isSpeeding = false;
 
     public float playerMovementSpeed = 10;
 
@@ -58,7 +59,12 @@ public class PlayerMovement : MonoBehaviour
             movementSpeedMultiplier = 1;
         }
 
+        if(isSpeeding == true)
+        {
+            Debug.Log(isSpeeding + "is on");
+            movementSpeedMultiplier = movementSpeedMultiplier * 2;
 
+        }
     }
-
+    
 }
