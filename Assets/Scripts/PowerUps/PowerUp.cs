@@ -16,7 +16,7 @@ public class PowerUp
     { 
         powerUpName = HealthRegeneration;
         durationSeconds = newdurationSeconds;
-        originalDuration = durationSeconds
+        originalDuration = durationSeconds;
     
     
     }
