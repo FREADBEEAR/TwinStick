@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8375176692959075336}
   - component: {fileID: -7065551055159424485}
   - component: {fileID: -618448983491037644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyBlob
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 6265821354084857884}
   - component: {fileID: 7355215871995750746}
   - component: {fileID: 8773647699310837492}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
