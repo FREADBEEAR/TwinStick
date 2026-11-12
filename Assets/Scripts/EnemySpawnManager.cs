@@ -44,7 +44,15 @@ public class EnemySpawnManager : MonoBehaviour
             {
                 enemies.RemoveAt(i);
             }
+            if (enemies.Count > 20)
+            {
+                Debug.Log("Too many enemies in the game! Stopping spawn.");
+                StopCoroutine(SpawnEnemies());
+            }
         }
+
+      
+        
     }
     
         

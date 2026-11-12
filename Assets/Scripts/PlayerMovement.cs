@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Rigidbody playerbody;
 
     [SerializeField] private InputActionReference moveAction;
     [SerializeField] private InputActionReference lookAction;
@@ -24,26 +25,43 @@ public class PlayerMovement : MonoBehaviour
     Transform playerTransform;
     Vector3 playerPosition;
 
-    void Start()
+    private void Start()
     {
         playerTransform = this.gameObject.GetComponent<Transform>();
+
+        playerbody = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
        moveInput = moveAction.action.ReadValue<Vector2>();
        lookInput = lookAction.action.ReadValue<Vector2>();
-        Debug.Log("Move Input: " + moveInput);
+        
 
-        playerPosition = new Vector3(moveInput.x, 0, moveInput.y);
+        
 
-        playerTransform.Translate(playerPosition.normalized * playerMovementSpeed * movementSpeedMultiplier * Time.deltaTime, Space.World);
-        playerPosition = Vector3.zero;
+        Vector2 direction = -lookInput;
 
-        Vector3 mouseDirection = Input.mousePosition - Camera.main.WorldToScreenPoint(this.transform.position);
+        if (lookAction.action.activeControl?.device is Mouse)
+        { 
+            Vector2 playerOnScreen = Camera.main.WorldToScreenPoint(transform.position);
+            direction = playerOnScreen - Mouse.current.position.ReadValue();
 
-        float angle = Mathf.Atan2(mouseDirection.x, mouseDirection.y) * Mathf.Rad2Deg;
-        this.transform.rotation = Quaternion.Euler(0f, angle, 0f);
+        }
+
+        if (direction.sqrMagnitude > 0.05f)
+        {
+            transform.forward = new Vector3(direction.x, 0f, direction.y);
+
+        }
+
+
+
+
+
+
+
+
         // Check if the Left Shift key is pressed
         if (sprintAction.action.IsPressed())
         {
@@ -85,5 +103,19 @@ public class PlayerMovement : MonoBehaviour
         sprintAction.action.Disable();
         sneakAction.action.Disable();
     }
+
+    private void FixedUpdate()
+    {
+        Vector2 direction = moveInput.normalized;
+        float speed = playerMovementSpeed * movementSpeedMultiplier;
+
+        playerbody.linearVelocity = new Vector3(
+            direction.x * speed,
+            playerbody.linearVelocity.y,
+            direction.y * speed
+        );
+
+    }
+
 
 }
