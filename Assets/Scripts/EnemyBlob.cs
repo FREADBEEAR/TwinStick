@@ -42,4 +42,9 @@ public class EnemyBlob : MonoBehaviour
 
         
     }
+
+    public void TakeDamage(float damageAmount)
+    {
+        healthRef.TakeDamage(damageAmount);
+    }
 }
