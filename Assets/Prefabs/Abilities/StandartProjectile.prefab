@@ -154,6 +154,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StandartBolt
   projectile: {fileID: 6664691287293194917}
-  speed: 20
+  speed: 70
   damage: 10
   Health: 100

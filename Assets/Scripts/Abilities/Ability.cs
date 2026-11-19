@@ -8,13 +8,14 @@ public abstract class Ability : MonoBehaviour
     private bool hasHitEnemy;
     [SerializeField] private float Health = 100f;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        
-    }
+    
 
     private bool ApplyDamage(GameObject target)
     {
+
+       
+
+
         EnemyBlob enemyBlob = target.GetComponent<EnemyBlob>();
 
         if (enemyBlob != null)
@@ -43,4 +44,26 @@ public abstract class Ability : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (hasHitEnemy == true)
+        {
+            return;
+
+        }
+
+
+        bool damageApplied  = ApplyDamage(other.gameObject);
+
+        if (damageApplied == true)
+        {
+            hasHitEnemy = true;
+            ApplyEffect(other.gameObject);
+            Destroy(gameObject);
+        }
+
+
+
+    }
 }

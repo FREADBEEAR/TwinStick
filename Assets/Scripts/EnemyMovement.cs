@@ -4,7 +4,7 @@ using UnityEngine.InputSystem.Controls;
 public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private Vector3 MoveDirection;
-    [SerializeField] private float MoveSpeed;
+    [SerializeField] public float MoveSpeed;
     
 
 
