@@ -7,6 +7,7 @@ public abstract class Ability : MonoBehaviour
     [SerializeField] private float damage;
     private bool hasHitEnemy;
     [SerializeField] private float Health = 100f;
+    public AudioClip shootsound;
 
     
 

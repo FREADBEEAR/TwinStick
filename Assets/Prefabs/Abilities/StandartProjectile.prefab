@@ -157,3 +157,4 @@ MonoBehaviour:
   speed: 70
   damage: 10
   Health: 100
+  shootsound: {fileID: 8300000, guid: 503b720351e7d824b9b8db82fe1a0cdc, type: 3}

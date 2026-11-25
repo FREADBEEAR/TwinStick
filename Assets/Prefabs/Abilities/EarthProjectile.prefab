@@ -157,4 +157,5 @@ MonoBehaviour:
   speed: 40
   damage: 20
   Health: 100
+  shootsound: {fileID: 8300000, guid: 3e7d481680d5dcf4dab80fffe1bc5488, type: 3}
   RootSpeed: 0

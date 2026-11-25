@@ -11391,7 +11391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b943645c06333724ca134faf41ad88ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpManager
-  "powerUp\xF1ount": 000000000000000000000000
+  "powerUp\u0441ount": 000000000000000000000000
 --- !u!4 &1408277263
 Transform:
   m_ObjectHideFlags: 0
@@ -14703,7 +14703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b869f2c1d61c9064eadff9b6b2bd1ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityFiring
-  ability: {fileID: 9011643591444685215, guid: 33d999cebed6dd8498de43ab2f705c54, type: 3}
+  ability: {fileID: 9062662623213052807, guid: ecf17399d94bcd542b47a8956998be7d, type: 3}
 --- !u!1 &1771286075
 GameObject:
   m_ObjectHideFlags: 0
